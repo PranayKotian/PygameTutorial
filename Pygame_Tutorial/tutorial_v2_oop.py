@@ -3,6 +3,12 @@ from sys import exit
 from random import randint
 from pathlib import Path
 
+class Player(pygame.spirte.Spirte):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.image.load()
+        self.rect = self.image.get_rect(bottom = (200,300))
+
 def display_score():
     curtime = pygame.time.get_ticks()//1000 - start_time
     score_surf = test_font.render('Score: ' + f'{curtime}', False, (62,62,62))
