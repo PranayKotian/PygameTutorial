@@ -1,5 +1,5 @@
 import pygame
-from sys import exit
+import sys 
 from random import randint, choice
 from pathlib import Path
 
@@ -158,7 +158,7 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
-            exit()
+            sys.exit()
         if game_active:
             if event.type == obstacle_timer:
                 obstacle_group.add(Obstacle(choice(['fly','snail','snail'])))
