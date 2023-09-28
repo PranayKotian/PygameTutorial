@@ -102,7 +102,7 @@ WIDTH = 800
 HEIGHT = 400
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
-pygame.display.set_caption('Runner')
+pygame.display.set_caption('Pixel Runner')
 clock = pygame.time.Clock()
 
 game_active = False
