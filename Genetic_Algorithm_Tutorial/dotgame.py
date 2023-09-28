@@ -43,14 +43,14 @@ class Dot(pygame.sprite.Sprite):
                 if not (0<= self.rect.centerx <= WIN_WIDTH and 0<= self.rect.centery <= WIN_HEIGHT):
                     self.image.fill('Red')
                     self.move = False
-                    if self.rect.centerx < 0:
-                        self.rect.centerx = 0
-                    elif self.rect.centerx > WIN_WIDTH:
-                        self.rect.centerx = WIN_WIDTH
-                    elif self.rect.centery < 0:
-                        self.rect.centery = 0
-                    elif self.rect.centery > WIN_HEIGHT:
-                        self.rect.centery = WIN_HEIGHT
+                    # if self.rect.centerx < 0:
+                    #     self.rect.centerx = 0
+                    # elif self.rect.centerx > WIN_WIDTH:
+                    #     self.rect.centerx = WIN_WIDTH
+                    # elif self.rect.centery < 0:
+                    #     self.rect.centery = 0
+                    # elif self.rect.centery > WIN_HEIGHT:
+                    #     self.rect.centery = WIN_HEIGHT
 
 class Population():
     def __init__(self, size):
@@ -67,6 +67,13 @@ pygame.init()
 WIN_WIDTH = 1000
 WIN_HEIGHT = 1000
 
+GOAL_WIDTH = 20
+GOAL_X = WIN_WIDTH/2 - GOAL_WIDTH/2
+GOAL_Y = 0
+goal_image = pygame.Surface([GOAL_WIDTH, GOAL_WIDTH])
+goal_image.fill('Light Green')
+goal_rect = goal_image.get_rect(topleft=(GOAL_X,GOAL_Y))
+
 def main():
     win = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
     clock = pygame.time.Clock()
@@ -82,6 +89,8 @@ def main():
                 exit()
         
         win.fill((94,129,162))
+
+
         pop.dot_group.draw(win)
         pop.dot_group.update()
         
